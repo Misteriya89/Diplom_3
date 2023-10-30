@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPageTest {
+public class LoginPage {
 
     private WebDriver driver;
 
@@ -28,7 +28,7 @@ public class LoginPageTest {
     private By forgotPasswordLink = By.xpath(".//a[@href='/forgot-password' and text()='Восстановить пароль']");
 
 
-    public LoginPageTest(WebDriver driver){
+    public LoginPage(WebDriver driver){
         this.driver = driver;
     }
 

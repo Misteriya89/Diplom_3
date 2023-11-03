@@ -41,23 +41,30 @@
 src
 |-- main
 |   |-- java
+|   |   |-- pageobject
+|   |   |   |-- ForgotPasswordPage.java
+|   |   |   |-- LoginPage.java
+|   |   |   |-- MainPage.java
+|   |   |   |-- ProfilePage.java
+|   |   |   |-- RegisterPage.java
+|   |   |-- user
+|   |   |   |-- User.java
+|   |   |   |-- UserDataGenerator.java
+|   |   |   |-- UserLogin.java
+|   |   |   |-- UserSteps.java
 |   |-- resources
 |   |   |-- drivers
 |   |   |   |-- chromedriver.exe
 |   |   |   |-- yandexdriver.exe
 |-- test
 |   |-- java
-|   |   |-- tests
+|   |   |-- test
+|   |   |   |-- ConstructorEnterTest.java
+|   |   |   |-- ConstructorTest.java
 |   |   |   |-- LoginTest.java
-|   |   |   |-- RegistrationTest.java
-|   |   |   |-- TransitionInConstructorTest.java
-|   |   |   |-- TransitionInProfilePageTest.java
-|   |   |-- pages
-|   |   |   |-- LoginPage.java
-|   |   |   |-- MainPage.java
-|   |   |   |-- ProfilePage.java
-|   |   |   |-- RecoverPasswordPage.java
-|   |   |   |-- RegisterPage.java
+|   |   |   |-- LogoutTest.java
+|   |   |   |-- ProfilePageEnterTest.java
+|   |   |   |-- UserRegisterTest.java
 .gitignore
 pom.xml
 README.md

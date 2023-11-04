@@ -2,10 +2,7 @@ package test;
 
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -22,10 +19,13 @@ public class ConstructorEnterTest {
     public WebDriver driver;
     private User user;
     private String accessToken;
+
+
+
     @Before
     public void setUp() {
-        //System.setProperty("webdriver.chrome.driver", "src/main/resources/yandexdriver.exe");
-        //driver = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/yandexdriver.exe");
+        driver = new ChromeDriver();
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments(new String[]{"--remote-allow-origins=*"});
@@ -35,6 +35,8 @@ public class ConstructorEnterTest {
         RestAssured.baseURI = UserSteps.baseURL;
         user = UserDataGenerator.getRandomUser();
         accessToken = UserSteps.createNewUser(user).then().extract().path("accessToken");
+
+
     }
     @Test
     @DisplayName("Переход из личного кабинета в конструктор по клику на «Конструктор»")

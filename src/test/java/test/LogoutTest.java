@@ -24,8 +24,8 @@ public class LogoutTest {
     private String accessToken;
     @Before
     public void setUp() {
-        //System.setProperty("webdriver.chrome.driver", "src/main/resources/yandexdriver.exe");
-        //driver = new ChromeDriver();
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/yandexdriver.exe");
+        driver = new ChromeDriver();
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments(new String[]{"--remote-allow-origins=*"});

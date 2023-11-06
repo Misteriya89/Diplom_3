@@ -48,6 +48,7 @@ src
 |   |   |   |-- ProfilePage.java
 |   |   |   |-- RegisterPage.java
 |   |   |-- user
+|   |   |   |-- TestBase.java
 |   |   |   |-- User.java
 |   |   |   |-- UserDataGenerator.java
 |   |   |   |-- UserLogin.java
@@ -55,6 +56,7 @@ src
 |   |-- resources
 |   |   |-- drivers
 |   |   |   |-- chromedriver.exe
+|   |   |   |-- config.properties
 |   |   |   |-- yandexdriver.exe
 |-- test
 |   |-- java

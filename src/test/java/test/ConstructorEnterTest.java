@@ -3,20 +3,18 @@ package test;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.RestAssured;
 import org.junit.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import pageobject.LoginPage;
 import pageobject.MainPage;
 import pageobject.ProfilePage;
+import user.TestBase;
 import user.User;
 import user.UserDataGenerator;
 import user.UserSteps;
 
 import java.time.Duration;
 
-public class ConstructorEnterTest {
-    public WebDriver driver;
+public class ConstructorEnterTest extends TestBase {
+
     private User user;
     private String accessToken;
 
@@ -24,12 +22,6 @@ public class ConstructorEnterTest {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/yandexdriver.exe");
-        driver = new ChromeDriver();
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments(new String[]{"--remote-allow-origins=*"});
-        driver = new ChromeDriver(options);
         driver.get(UserSteps.baseURL);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10L));
         RestAssured.baseURI = UserSteps.baseURL;

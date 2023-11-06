@@ -7,32 +7,27 @@ import org.junit.Assert;
 import org.junit.Before;
 import java.time.Duration;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pageobject.MainPage;
+import user.TestBase;
 import user.UserDataGenerator;
 import user.UserSteps;
 import user.User;
 
-public class ConstructorTest {
-    public WebDriver driver;
+public class ConstructorTest extends TestBase {
+
     private User user;
     private String accessToken;
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/yandexdriver.exe");
-        driver = new ChromeDriver();
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments(new String[]{"--remote-allow-origins=*"});
-        driver = new ChromeDriver(options);
         driver.get(UserSteps.baseURL);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10L));
         RestAssured.baseURI = UserSteps.baseURL;
         user = UserDataGenerator.getRandomUser();
         accessToken = UserSteps.createNewUser(user).then().extract().path("accessToken");
+
+
     }
+
     @Test
     @DisplayName("Переход к разделу Булки на главной страннице")
     public void bunChapterTest(){

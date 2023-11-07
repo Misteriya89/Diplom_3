@@ -36,7 +36,6 @@
 **mvn allure:report**
 
 ### Структура проекта
-
 ```
 src
 |-- main
